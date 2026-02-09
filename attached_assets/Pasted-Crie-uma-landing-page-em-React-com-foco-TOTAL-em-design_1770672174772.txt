@@ -1,0 +1,71 @@
+Crie uma landing page em React com foco TOTAL em design e impacto visual,
+para divulgar aulas de Jiu-Jitsu.
+
+O objetivo principal é transmitir:
+- Esporte
+- Disciplina
+- Respeito
+- Autoridade do professor
+
+Estilo visual:
+- Visual esportivo premium (academia de luta profissional)
+- Atmosfera forte e imponente
+- Sensação de respeito, tradição e alto nível técnico
+- Layout moderno e limpo, sem poluição visual
+
+Paleta de cores:
+- Preto como cor principal (fundo)
+- Branco para textos
+- Dourado OU vermelho para destaques, títulos e botões
+- Alto contraste entre fundo e conteúdo
+
+Tipografia:
+- Fonte moderna e forte (ex: Montserrat, Oswald ou Poppins)
+- Títulos em caixa alta
+- Boa hierarquia visual (títulos grandes, subtítulos médios, texto limpo)
+
+Diretrizes de design:
+- Hero section de alto impacto
+- Imagem ou background escuro com overlay
+- Título grande e dominante logo no topo
+- Botões de CTA bem destacados (WhatsApp)
+- Cards com bordas sutis, sombras leves ou linhas douradas
+- Espaçamento generoso (design “respira”)
+- Animações suaves e discretas (hover, fade-in, slide)
+
+Componentes visuais:
+1. HeroSection
+   - Fundo escuro
+   - Título grande e forte
+   - Subtítulo elegante
+   - CTA em destaque (WhatsApp)
+
+2. Seções em blocos bem definidos
+   - Separação clara entre áreas
+   - Uso de linhas, divisores ou fundos alternados
+   - Destaque visual para horários
+
+3. Professor Section
+   - Visual de autoridade
+   - Nome em destaque
+   - Títulos com cor de destaque
+   - Área reservada para foto com moldura elegante
+
+Responsividade:
+- Design mobile-first
+- Botões grandes e acessíveis
+- Texto sempre legível em telas pequenas
+
+Requisitos técnicos:
+- React com Vite
+- JavaScript
+- CSS focado em estética (pode usar CSS Modules)
+- Código limpo e organizado
+- Componentes separados por seção
+- Tudo pronto para rodar no Replit
+
+Prioridade absoluta:
+DESIGN, ESTILO VISUAL E IMPACTO.
+A funcionalidade é simples; o visual é o protagonista.
+
+Gere o projeto completo com código e estilos.

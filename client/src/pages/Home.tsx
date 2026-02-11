@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/custom-button";
 import { Trophy, Users, Shield, Clock, MapPin, Instagram, Facebook, Phone } from "lucide-react";
 import heroImg from "@assets/img-01_1770672190326.jpg";
 import instructorImg from "@assets/img02_1770672190324.jpg";
+import ScheduleSection from "@/components/ScheduleSection";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -27,78 +28,71 @@ export default function Home() {
       <Navbar />
 
       {/* HERO SECTION */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src={heroImg} 
-            alt="Brazilian Jiu Jitsu Training" 
-            className="w-full h-full object-cover object-center scale-105 animate-in fade-in duration-1000"
+      <section id="hero" className="relative min-h-screen md:h-screen flex flex-col overflow-hidden bg-black">
+        {/* Container da Imagem */}
+        <div className="relative h-[45vh] md:absolute md:inset-0 md:h-full w-full z-0">
+          <img
+            src={heroImg}
+            className="w-full h-full object-cover object-top md:object-center md:scale-105 animate-in fade-in duration-1000"
+            alt="Hero"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-black/60 to-black/40" />
-          <div className="absolute inset-0 bg-black/30 backdrop-blur-[1px]" />
+          {/* Overlay que escurece a base da imagem no mobile e o fundo todo no desktop */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 md:via-black/60 to-transparent md:bg-black/40" />
         </div>
 
-        <div className="container relative z-10 px-4 pt-20 text-center md:text-left">
-          <motion.div 
-            initial="hidden"
-            animate="visible"
-            variants={staggerContainer}
-            className="max-w-4xl"
-          >
-            <motion.div variants={fadeInUp} className="flex items-center justify-center md:justify-start gap-4 mb-6">
-              <div className="h-1 w-12 bg-primary"></div>
-              <span className="text-primary font-bold uppercase tracking-[0.2em] text-sm md:text-base">
-                Brazilian Jiu-Jitsu Academy
-              </span>
-            </motion.div>
-            
-            <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white leading-[0.9] mb-8 uppercase text-glow">
-              Disciplina<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">Respeito</span><br />
-              <span className="text-primary">Evolução</span>
-            </motion.h1>
+        {/* Conteúdo */}
+        <div className="flex-1 container relative z-10 px-4 flex items-center">
+          <div className="w-full py-12 md:py-0 text-center md:text-left">
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={staggerContainer}
+              className="max-w-4xl"
+            >
+              <motion.div variants={fadeInUp} className="flex items-center justify-center md:justify-start gap-4 mb-6">
+                <span className="text-primary font-bold uppercase tracking-[0.2em] text-xs md:text-base">
+                  Academia de Brazilian Jiu-Jitsu
+                </span>
+              </motion.div>
 
-            <motion.p variants={fadeInUp} className="text-gray-300 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed font-light">
-              Mais do que uma academia, uma escola de vida. Aprenda a arte suave em um ambiente focado no desenvolvimento técnico, físico e mental.
-            </motion.p>
+              <motion.h1 variants={fadeInUp} className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-bold text-white leading-[0.9] mb-6 uppercase">
+                Disciplina<br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">Respeito</span><br />
+                <span className="text-primary">Evolução</span>
+              </motion.h1>
 
-            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <Button 
-                size="lg" 
-                className="text-lg"
-                onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Agendar Aula Experimental
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="text-lg border-white text-white hover:bg-white hover:text-black"
-                onClick={() => document.getElementById('horarios')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Ver Horários
-              </Button>
+              <motion.p variants={fadeInUp} className="text-gray-300 text-base md:text-xl max-w-2xl mb-10 leading-relaxed font-light mx-auto md:mx-0">
+                Treine com o Professor André Ventrilho.
+                <br className="hidden md:block" />
+                Jiu-Jitsu com método e disciplina em um ambiente que forma atletas.
+              </motion.p>
+
+              <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <Button
+                  size="lg"
+                  className="w-full sm:w-auto"
+                  onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  Agendar Aula Experimental
+                </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-black"
+                  onClick={() => document.getElementById('horarios')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  Ver Horários
+                </Button>
+              </motion.div>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
-
-        {/* Scroll Indicator */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50"
-        >
-          <span className="text-xs uppercase tracking-widest">Scroll</span>
-          <div className="w-[1px] h-12 bg-gradient-to-b from-primary to-transparent"></div>
-        </motion.div>
       </section>
 
       {/* VALUES SECTION */}
       <section id="metodologia" className="py-24 bg-background relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none" />
-        
+
         <div className="container relative z-10 px-4">
           <div className="flex flex-col items-center text-center mb-16">
             <span className="text-primary font-bold uppercase tracking-widest text-sm mb-2">Nossa Filosofia</span>
@@ -150,16 +144,16 @@ export default function Home() {
       <section id="instrutor" className="py-24 bg-[#050505] border-y border-white/5">
         <div className="container px-4">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className="lg:w-1/2 relative"
             >
               <div className="relative z-10 border-2 border-primary/30 p-2">
-                <img 
-                  src={instructorImg} 
-                  alt="Head Instructor" 
+                <img
+                  src={instructorImg}
+                  alt="Head Instructor"
                   className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
                 />
               </div>
@@ -167,8 +161,8 @@ export default function Home() {
               <div className="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-primary z-0"></div>
               <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-primary z-0"></div>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -177,18 +171,18 @@ export default function Home() {
               <span className="text-primary font-bold uppercase tracking-widest text-sm">Head Coach</span>
               <h2 className="text-4xl md:text-5xl text-white mt-2 mb-6">Professor Mestre</h2>
               <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-                Com mais de 15 anos de experiência nos tatames, o Professor dedica sua vida ao ensino e disseminação do verdadeiro Jiu-Jitsu Brasileiro. 
+                Com mais de 15 anos de experiência nos tatames, o Professor dedica sua vida ao ensino e disseminação do verdadeiro Jiu-Jitsu Brasileiro.
                 Focado na formação de caráter e na excelência técnica.
               </p>
-              
+
               <div className="space-y-4 mb-8">
                 <div className="flex items-center gap-4">
                   <div className="h-2 w-2 bg-primary rounded-full"></div>
-                  <span className="text-white font-medium">Faixa Preta 3º Grau</span>
+                  <span className="text-white font-medium">Faixa Preta</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="h-2 w-2 bg-primary rounded-full"></div>
-                  <span className="text-white font-medium">Campeão Brasileiro</span>
+                  <span className="text-white font-medium">Bicampeão Sulamericano</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="h-2 w-2 bg-primary rounded-full"></div>
@@ -207,68 +201,7 @@ export default function Home() {
       </section>
 
       {/* SCHEDULE SECTION */}
-      <section id="horarios" className="py-24 bg-background">
-        <div className="container px-4">
-          <div className="flex flex-col items-center text-center mb-16">
-            <span className="text-primary font-bold uppercase tracking-widest text-sm mb-2">Grade de Aulas</span>
-            <h2 className="text-4xl md:text-5xl text-white mb-6">Horários de Treino</h2>
-            <div className="h-1 w-24 bg-primary"></div>
-          </div>
-
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="border-b border-white/10">
-                  <th className="p-4 text-primary font-display text-xl uppercase">Horário</th>
-                  <th className="p-4 text-white font-display text-xl uppercase">Segunda</th>
-                  <th className="p-4 text-white font-display text-xl uppercase">Terça</th>
-                  <th className="p-4 text-white font-display text-xl uppercase">Quarta</th>
-                  <th className="p-4 text-white font-display text-xl uppercase">Quinta</th>
-                  <th className="p-4 text-white font-display text-xl uppercase">Sexta</th>
-                </tr>
-              </thead>
-              <tbody className="text-gray-400">
-                <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                  <td className="p-4 font-bold text-white">07:00</td>
-                  <td className="p-4">Jiu-Jitsu (Todos)</td>
-                  <td className="p-4">No-Gi</td>
-                  <td className="p-4">Jiu-Jitsu (Todos)</td>
-                  <td className="p-4">No-Gi</td>
-                  <td className="p-4">Jiu-Jitsu (Todos)</td>
-                </tr>
-                <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                  <td className="p-4 font-bold text-white">12:00</td>
-                  <td className="p-4">Drills & Posições</td>
-                  <td className="p-4">Sparring</td>
-                  <td className="p-4">Drills & Posições</td>
-                  <td className="p-4">Sparring</td>
-                  <td className="p-4">Open Mat</td>
-                </tr>
-                <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                  <td className="p-4 font-bold text-white">18:00</td>
-                  <td className="p-4">Kids (5-10 anos)</td>
-                  <td className="p-4">Teens (11-15 anos)</td>
-                  <td className="p-4">Kids (5-10 anos)</td>
-                  <td className="p-4">Teens (11-15 anos)</td>
-                  <td className="p-4">-</td>
-                </tr>
-                <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                  <td className="p-4 font-bold text-white">19:30</td>
-                  <td className="p-4">Fundamental</td>
-                  <td className="p-4">Avançado</td>
-                  <td className="p-4">Fundamental</td>
-                  <td className="p-4">Avançado</td>
-                  <td className="p-4">Open Mat</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          
-          <div className="mt-8 text-center">
-            <p className="text-gray-500 text-sm">* Chegue com 15 minutos de antecedência. Kimono obrigatório (exceto No-Gi).</p>
-          </div>
-        </div>
-      </section>
+      <ScheduleSection />
 
       {/* CONTACT SECTION */}
       <section id="contato" className="py-24 bg-[#050505] relative border-t border-white/10">
@@ -278,7 +211,7 @@ export default function Home() {
               <span className="text-primary font-bold uppercase tracking-widest text-sm block mb-2">Comece Hoje</span>
               <h2 className="text-4xl md:text-5xl text-white mb-8">Agende sua Aula Experimental Gratuita</h2>
               <p className="text-gray-400 mb-10 leading-relaxed text-lg">
-                Preencha o formulário e nossa equipe entrará em contato para agendar sua primeira visita. Não é necessário ter experiência prévia. Venha conhecer nosso ambiente e metodologia.
+                Fale conosco pelo WhatsApp ou Instagram e agende sua primeira aula. Esperamos você no tatame.
               </p>
 
               <div className="space-y-6">
@@ -288,22 +221,22 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="text-white text-lg mb-1">Localização</h4>
-                    <p className="text-gray-400">Rua das Artes Marciais, 123 - Centro</p>
-                    <p className="text-gray-400">São Paulo - SP</p>
+                    <p className="text-gray-400">Av. Mandacaru, 885 - Zona 06, , 87080-185</p>
+                    <p className="text-gray-400">Sobreloja</p>
+                    <p className="text-gray-400">Maringá - PR</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-primary/10 rounded-sm">
                     <Phone className="text-primary" />
                   </div>
                   <div>
                     <h4 className="text-white text-lg mb-1">Contato</h4>
-                    <p className="text-gray-400">(11) 99999-9999</p>
-                    <p className="text-gray-400">contato@blackbelt.com</p>
+                    <p className="text-gray-400">(44)9967-6904</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-primary/10 rounded-sm">
                     <Clock className="text-primary" />
@@ -331,10 +264,10 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-2">
               <span className="font-display font-bold text-xl text-white tracking-wide">
-                BLACK <span className="text-primary">BELT</span>
+                ANDRÉ <span className="text-primary">VENTRILHO</span>
               </span>
             </div>
-            
+
             <div className="flex gap-6">
               <a href="#" className="text-gray-400 hover:text-primary transition-colors">
                 <Instagram size={24} />
@@ -343,9 +276,9 @@ export default function Home() {
                 <Facebook size={24} />
               </a>
             </div>
-            
+
             <p className="text-gray-600 text-sm text-center md:text-right">
-              &copy; {new Date().getFullYear()} Black Belt Academy. Todos os direitos reservados.
+              &copy; {new Date().getFullYear()} André Ventrilho Brazilian Jiu-Jitsu. Todos os direitos reservados.
             </p>
           </div>
         </div>

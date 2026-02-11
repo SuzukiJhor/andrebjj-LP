@@ -24,52 +24,57 @@ export function Navbar() {
     }
   };
 
+  function redirectTOWhatsApp() {
+    window.open("https://wa.me/554499676904", "_blank");
+  }
+
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-black/95 backdrop-blur-sm border-b border-white/10 py-2" : "bg-transparent py-4"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-black/95 backdrop-blur-sm border-b border-white/10 py-2" : "bg-transparent py-4"
+        }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <Link href="/">
+
+        <button onClick={() => scrollToSection("hero")}>
           <div className="flex items-center gap-3 cursor-pointer group">
             <div className="h-10 w-10 md:h-12 md:w-12 rounded-full overflow-hidden border-2 border-primary group-hover:shadow-[0_0_15px_rgba(212,175,55,0.5)] transition-shadow">
               <img src={logo} alt="Logo" className="h-full w-full object-cover" />
             </div>
             <span className="font-display font-bold text-xl md:text-2xl text-white tracking-wide">
-              BLACK <span className="text-primary">BELT</span>
+              ANDRÉ <span className="text-primary">VENTRILHO</span>
             </span>
           </div>
-        </Link>
+        </button>
+
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
-          <button 
-            onClick={() => scrollToSection("sobre")}
+          <button
+            onClick={() => scrollToSection("hero")}
             className="text-sm font-bold uppercase tracking-widest text-white/80 hover:text-primary transition-colors"
           >
             Sobre
           </button>
-          <button 
+          <button
             onClick={() => scrollToSection("metodologia")}
             className="text-sm font-bold uppercase tracking-widest text-white/80 hover:text-primary transition-colors"
           >
             Metodologia
           </button>
-          <button 
+          <button
             onClick={() => scrollToSection("instrutor")}
             className="text-sm font-bold uppercase tracking-widest text-white/80 hover:text-primary transition-colors"
           >
             Instrutor
           </button>
-          <button 
+          <button
             onClick={() => scrollToSection("horarios")}
             className="text-sm font-bold uppercase tracking-widest text-white/80 hover:text-primary transition-colors"
           >
             Horários
           </button>
-          <Button 
-            variant="default" 
+          <Button
+            variant="default"
             size="sm"
             onClick={() => scrollToSection("contato")}
           >
@@ -89,34 +94,35 @@ export function Navbar() {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-black border-b border-white/10 p-4 flex flex-col gap-4 shadow-2xl animate-in slide-in-from-top-5">
-          <button 
-            onClick={() => scrollToSection("sobre")}
+          <button
+            onClick={() => scrollToSection("hero")}
             className="text-left py-2 px-4 text-sm font-bold uppercase tracking-widest text-white/80 hover:text-primary hover:bg-white/5 rounded-sm"
           >
             Sobre
           </button>
-          <button 
+          <button
             onClick={() => scrollToSection("metodologia")}
             className="text-left py-2 px-4 text-sm font-bold uppercase tracking-widest text-white/80 hover:text-primary hover:bg-white/5 rounded-sm"
           >
             Metodologia
           </button>
-          <button 
+          <button
             onClick={() => scrollToSection("instrutor")}
             className="text-left py-2 px-4 text-sm font-bold uppercase tracking-widest text-white/80 hover:text-primary hover:bg-white/5 rounded-sm"
           >
             Instrutor
           </button>
-          <button 
+          <button
             onClick={() => scrollToSection("horarios")}
             className="text-left py-2 px-4 text-sm font-bold uppercase tracking-widest text-white/80 hover:text-primary hover:bg-white/5 rounded-sm"
           >
             Horários
           </button>
-          <Button 
-            variant="default" 
+
+          <Button
+            variant="default"
             className="w-full mt-2"
-            onClick={() => scrollToSection("contato")}
+            onClick={() => redirectTOWhatsApp()}
           >
             Agendar Aula
           </Button>

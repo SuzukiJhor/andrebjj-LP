@@ -1,134 +1,70 @@
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { insertInquirySchema, type InsertInquiry } from "@shared/schema";
-import { useCreateInquiry } from "@/hooks/use-inquiries";
 import { Button } from "@/components/ui/custom-button";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Loader2 } from "lucide-react";
+import { FaWhatsapp, FaInstagram } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 export function ContactForm() {
-  const { mutate, isPending } = useCreateInquiry();
-
-  const form = useForm<InsertInquiry>({
-    resolver: zodResolver(insertInquirySchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-    },
-  });
-
-  const onSubmit = (data: InsertInquiry) => {
-    mutate(data, {
-      onSuccess: () => {
-        form.reset();
-      },
-    });
-  };
-
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-        <FormField
-          control={form.control}
-          name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="text-primary font-bold uppercase">Nome Completo</FormLabel>
-              <FormControl>
-                <Input 
-                  placeholder="Seu nome" 
-                  {...field} 
-                  className="bg-muted border-white/10 focus-visible:ring-primary h-12 rounded-sm"
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-primary font-bold uppercase">Email</FormLabel>
-                <FormControl>
-                  <Input 
-                    type="email" 
-                    placeholder="seu@email.com" 
-                    {...field} 
-                    className="bg-muted border-white/10 focus-visible:ring-primary h-12 rounded-sm"
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="phone"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-primary font-bold uppercase">Telefone (WhatsApp)</FormLabel>
-                <FormControl>
-                  <Input 
-                    type="tel" 
-                    placeholder="(11) 99999-9999" 
-                    {...field} 
-                    value={field.value || ""}
-                    className="bg-muted border-white/10 focus-visible:ring-primary h-12 rounded-sm"
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-        </div>
-        <FormField
-          control={form.control}
-          name="message"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="text-primary font-bold uppercase">Mensagem</FormLabel>
-              <FormControl>
-                <Textarea 
-                  placeholder="Tenho interesse em conhecer..." 
-                  {...field} 
-                  value={field.value || ""}
-                  className="bg-muted border-white/10 focus-visible:ring-primary min-h-[120px] rounded-sm resize-none"
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <Button 
-          type="submit" 
-          disabled={isPending} 
-          className="w-full"
-          size="lg"
+    <section
+      id="contato"
+      className="bg-background py-20 px-4"
+    >
+      <div className="container max-w-4xl mx-auto text-center">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-5xl font-display font-bold text-white uppercase mb-6"
         >
-          {isPending ? (
-            <>
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Enviando...
-            </>
-          ) : (
-            "Solicitar Aula Experimental"
-          )}
-        </Button>
-      </form>
-    </Form>
+          Entre em Contato
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1, duration: 0.6 }}
+          className="text-gray-300 text-lg mb-12"
+        >
+          Entre em contato pelo WhatsApp ou Instagram e agende sua primeira aula.
+          Não é necessário ter experiência.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+        >
+          {/* WhatsApp */}
+          <a
+            href="https://wa.me/554499676904"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group"
+          >
+            <div className="flex items-center justify-center gap-4 border border-white/20 rounded-lg p-6 hover:bg-primary hover:text-black transition-all">
+              <FaWhatsapp className="text-3xl" />
+              <span className="text-lg font-semibold uppercase tracking-wide">
+                Falar no WhatsApp
+              </span>
+            </div>
+          </a>
+
+          {/* Instagram */}
+          <a
+            href="https://www.instagram.com/andre_henrique1982/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group"
+          >
+            <div className="flex items-center justify-center gap-4 border border-white/20 rounded-lg p-6 hover:bg-white hover:text-black transition-all">
+              <FaInstagram className="text-3xl" />
+              <span className="text-lg font-semibold uppercase tracking-wide">
+                Chamar no Instagram
+              </span>
+            </div>
+          </a>
+        </motion.div>
+      </div>
+    </section>
   );
 }

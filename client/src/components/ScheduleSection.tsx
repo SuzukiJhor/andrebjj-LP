@@ -31,9 +31,7 @@ const ScheduleSection = () => {
                             <span className="font-body text-base md:text-lg text-muted-foreground font-light">
                                 {s.time}
                             </span>
-                            <span className="font-body text-xs uppercase tracking-widest text-secondary font-semibold hidden sm:block">
-                                {s.category}
-                            </span>
+                        
                         </div>
                     ))}
                 </div>

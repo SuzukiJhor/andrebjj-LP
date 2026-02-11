@@ -41,7 +41,19 @@ export function ContactForm() {
             rel="noopener noreferrer"
             className="group"
           >
-            <div className="flex items-center justify-center gap-4 border border-white/20 rounded-lg p-6 hover:bg-primary hover:text-black transition-all">
+            <div
+              className="
+                  flex items-center justify-center gap-4 
+                  border border-white/20 
+                  rounded-lg p-6 
+                  transition-all duration-300
+
+                  bg-primary text-black      /* Mobile padrão */
+
+                  md:bg-transparent md:text-white  /* Desktop padrão */
+                  md:hover:bg-primary md:hover:text-black
+        "
+            >
               <FaWhatsapp className="text-3xl" />
               <span className="text-lg font-semibold uppercase tracking-wide">
                 Falar no WhatsApp
@@ -56,7 +68,17 @@ export function ContactForm() {
             rel="noopener noreferrer"
             className="group"
           >
-            <div className="flex items-center justify-center gap-4 border border-white/20 rounded-lg p-6 hover:bg-white hover:text-black transition-all">
+            <div className="
+                  flex items-center justify-center gap-4 
+                  border border-white/20 
+                  rounded-lg p-6 
+                  transition-all duration-300
+
+                  bg-primary text-black      /* Mobile padrão */
+
+                  md:bg-transparent md:text-white  /* Desktop padrão */
+                  md:hover:bg-primary md:hover:text-black
+        ">
               <FaInstagram className="text-3xl" />
               <span className="text-lg font-semibold uppercase tracking-wide">
                 Chamar no Instagram

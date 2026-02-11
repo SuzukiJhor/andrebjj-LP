@@ -154,7 +154,7 @@ export default function Home() {
                 <img
                   src={instructorImg}
                   alt="Head Instructor"
-                  className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
+                  className="w-full h-auto md:grayscale md:hover:grayscale-0 transition-all duration-700"
                 />
               </div>
               {/* Decorative elements behind image */}

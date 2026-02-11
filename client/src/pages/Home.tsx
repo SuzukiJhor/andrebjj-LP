@@ -3,8 +3,8 @@ import { Navbar } from "@/components/Navbar";
 import { ContactForm } from "@/components/ContactForm";
 import { Button } from "@/components/ui/custom-button";
 import { Trophy, Users, Shield, Clock, MapPin, Instagram, Facebook, Phone } from "lucide-react";
-import heroImg from "@assets/img-01_1770672190326.jpg";
-import instructorImg from "@assets/img02_1770672190324.jpg";
+import heroImg from "/img-01.jpg";
+import instructorImg from "/img02.jpg";
 import ScheduleSection from "@/components/ScheduleSection";
 
 const fadeInUp = {

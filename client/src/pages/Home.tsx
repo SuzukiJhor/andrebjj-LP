@@ -171,7 +171,7 @@ export default function Home() {
               <span className="text-primary font-bold uppercase tracking-widest text-sm">Head Coach</span>
               <h2 className="text-4xl md:text-5xl text-white mt-2 mb-6">Professor Mestre</h2>
               <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-                Com mais de 15 anos de experiência nos tatames, o Professor dedica sua vida ao ensino e disseminação do verdadeiro Jiu-Jitsu Brasileiro.
+                Com mais de 10 anos de experiência nos tatames, o Professor dedica sua vida ao ensino e disseminação do verdadeiro Jiu-Jitsu Brasileiro.
                 Focado na formação de caráter e na excelência técnica.
               </p>
 
@@ -186,7 +186,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="h-2 w-2 bg-primary rounded-full"></div>
-                  <span className="text-white font-medium">Especialista em Defesa Pessoal</span>
+                  <span className="text-white font-medium">Defesa Pessoal</span>
                 </div>
               </div>
 

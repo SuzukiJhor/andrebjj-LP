@@ -6,6 +6,7 @@ import { Trophy, Users, Shield, Clock, MapPin, Instagram, Facebook, Phone } from
 import heroImg from "/img-01.jpg";
 import instructorImg from "/img02.jpg";
 import ScheduleSection from "@/components/ScheduleSection";
+import GoogleReviewsSection from "@/components/GoogleReviewsSection";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -51,7 +52,7 @@ export default function Home() {
             >
               <motion.div variants={fadeInUp} className="flex items-center justify-center md:justify-start gap-4 mb-6">
                 <span className="text-primary font-bold uppercase tracking-[0.2em] text-xs md:text-base">
-                  Academia de Brazilian Jiu-Jitsu
+                  Academia de Jiu-Jitsu
                 </span>
               </motion.div>
 
@@ -202,6 +203,8 @@ export default function Home() {
 
       {/* SCHEDULE SECTION */}
       <ScheduleSection />
+
+      {/* <GoogleReviewsSection /> */}
 
       {/* CONTACT SECTION */}
       <section id="contato" className="py-24 bg-[#050505] relative border-t border-white/10">

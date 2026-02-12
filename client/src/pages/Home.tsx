@@ -224,7 +224,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="text-white text-lg mb-1">Localização</h4>
-                    <p className="text-gray-400">Av. Mandacaru, 885 - Zona 06, , 87080-185</p>
+                    <p className="text-gray-400">Av. Mandacaru, 649 - Zona 06, 87080-000</p>
                     <p className="text-gray-400">Sobreloja</p>
                     <p className="text-gray-400">Maringá - PR</p>
                   </div>

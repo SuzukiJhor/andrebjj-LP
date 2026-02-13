@@ -272,10 +272,10 @@ export default function Home() {
             </div>
 
             <div className="flex gap-6">
-              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+              <a href="https://www.instagram.com/andre_henrique1982" className="text-gray-400 hover:text-primary transition-colors">
                 <Instagram size={24} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+              <a href="https://www.instagram.com/andre_henrique1982" className="text-gray-400 hover:text-primary transition-colors">
                 <Facebook size={24} />
               </a>
             </div>

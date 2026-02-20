@@ -103,7 +103,8 @@ export default function Home() {
       </section>
 
       {/* VALUES SECTION */}
-      <section id="metodologia" className="py-24 bg-background relative overflow-hidden">
+      <section className="relative min-h-[70vh] md:min-h-screen w-full overflow-hidden flex items-center justify-center">
+
         <div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none" />
 
         <div className="container relative z-10 px-4">
@@ -224,7 +225,7 @@ export default function Home() {
         {/* CONTENT */}
         <div className="relative z-10 text-center px-6">
 
-          <AnimatedPhrase words={words}/>
+          <AnimatedPhrase words={words} />
         </div>
 
       </section>

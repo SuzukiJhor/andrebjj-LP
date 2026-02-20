@@ -103,7 +103,7 @@ export default function Home() {
       </section>
 
       {/* VALUES SECTION */}
-      <section className="relative min-h-[70vh] md:min-h-screen w-full overflow-hidden flex items-center justify-center">
+      <section id="metodologia" className="relative min-h-[70vh] md:min-h-screen w-full overflow-hidden flex items-center justify-center">
 
         <div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none" />
 

@@ -7,12 +7,24 @@ import heroImg from "/img-01.jpg";
 import instructorImg from "/img02.jpg";
 import ScheduleSection from "@/components/ScheduleSection";
 import GoogleReviewsSection from "@/components/GoogleReviewsSection";
+import LazyVideo from "@/components/LazyVideo";
+import AnimatedPhrase from "@/components/AnimatedPhrase";
 
+const words = [
+  { text: "Cada", highlight: false },
+  { text: "treino", highlight: true },
+  { text: "é", highlight: false },
+  { text: "uma", highlight: false },
+  { text: "evolução.", highlight: true },
+  { text: "Cada", highlight: false },
+  { text: "queda,", highlight: true },
+  { text: "um", highlight: false },
+  { text: "aprendizado.", highlight: true }
+];
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
 };
-
 const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
@@ -201,10 +213,24 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="relative h-[70vh] w-full overflow-hidden flex items-center justify-center">
+
+        {/* VIDEO */}
+        <LazyVideo src="https://iulfmfgpbuhnoosdmktj.supabase.co/storage/v1/object/public/videos/bjj.mp4" />
+
+        {/* OVERLAY */}
+        <div className="absolute inset-0 bg-black/60" />
+
+        {/* CONTENT */}
+        <div className="relative z-10 text-center px-6">
+
+          <AnimatedPhrase words={words}/>
+        </div>
+
+      </section>
+
       {/* SCHEDULE SECTION */}
       <ScheduleSection />
-
-      {/* <GoogleReviewsSection /> */}
 
       {/* CONTACT SECTION */}
       <section id="contato" className="py-24 bg-[#050505] relative border-t border-white/10">

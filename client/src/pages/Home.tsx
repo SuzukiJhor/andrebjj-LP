@@ -299,10 +299,10 @@ export default function Home() {
             </div>
 
             <div className="flex gap-6">
-              <a href="https://www.instagram.com/andre_henrique1982" className="text-gray-400 hover:text-primary transition-colors">
+              <a href="https://www.instagram.com/andre_henrique1982" className="text-gray-400 hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
                 <Instagram size={24} />
               </a>
-              <a href="https://www.instagram.com/andre_henrique1982" className="text-gray-400 hover:text-primary transition-colors">
+              <a href="https://www.instagram.com/andre_henrique1982" className="text-gray-400 hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
                 <Facebook size={24} />
               </a>
             </div>

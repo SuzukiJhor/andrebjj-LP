@@ -7,6 +7,7 @@ import {
   Clock,
   MapPin,
   Instagram,
+  Sparkles,
   Facebook,
   Phone,
   MessageCircle,

@@ -11,8 +11,6 @@ import {
   Phone,
   MessageCircle,
   Award,
-  Calendar,
-  Sparkles,
   ArrowRight,
   X,
   Menu,
